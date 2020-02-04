@@ -64,6 +64,8 @@
 ## คำถาม
 
 1. ผลการทำงานของโปรแกรมเป็นอย่างไร ให้ cature หน้าจอพร้อมอธิบายการทำงาน
+
+
 [2.PNG](Lab2-activity-3/imgs/2.PNG)
 [3.PNG](Lab2-activity-3/imgs/3.PNG)
 [4.PNG](Lab2-activity-3/imgs/4.PNG)
