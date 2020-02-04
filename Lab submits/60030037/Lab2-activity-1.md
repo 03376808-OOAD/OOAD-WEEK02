@@ -48,8 +48,18 @@ int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrev, LPSTR lpCmdLine, int nCmdSh
 
 # คำถาม
 
-1. โปรแกรมสามารถทำงานได้หรือไม่ 
+1. โปรแกรมสามารถทำงานได้หรือไม่
+```
+ไม่สามารถทำงานได้
+```
 2. ถ้าไม่ได้ แก้ไขอย่างไร
+```
+แก้ไขได้โดยการกำหนดค่าของ Properties ใหม่โดยเข้าไปที่ Project -> {Project Name} Properties 
+ในส่วนของ Advanced Character Set โดยกำหนดค่าเป็น Use Multi-Byte Character Set
+
+**สำหรับ Visual Studio 2019
+```
+![cfg.png](cfg.PNG)
 
 # การส่งงาน
 
