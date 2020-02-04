@@ -49,9 +49,13 @@ int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrev, LPSTR lpCmdLine, int nCmdSh
 # คำถาม
 
 1. โปรแกรมสามารถทำงานได้หรือไม่ 
+
 	ไม่ได้
+
 2. ถ้าไม่ได้ แก้ไขอย่างไร
+
 	ไปที่ Project --> Property ไปที่ Advanced แล้วให้เปลี่ยน Character Set เป็น Use Muti Byte Character Set
+	
 
 # การส่งงาน
 
