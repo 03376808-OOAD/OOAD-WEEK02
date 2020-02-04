@@ -1,180 +1,72 @@
-// WIn32_Lab1.cpp : Defines the entry point for the application.
-//
+#include <windows.h>
 
-#include "framework.h"
-#include "WIn32_Lab1.h"
+LONG WINAPI WndProc(HWND, UINT, WPARAM, LPARAM);
 
-#define MAX_LOADSTRING 100
-
-// Global Variables:
-HINSTANCE hInst;                                // current instance
-WCHAR szTitle[MAX_LOADSTRING];                  // The title bar text
-WCHAR szWindowClass[MAX_LOADSTRING];            // the main window class name
-
-// Forward declarations of functions included in this code module:
-ATOM                MyRegisterClass(HINSTANCE hInstance);
-BOOL                InitInstance(HINSTANCE, int);
-LRESULT CALLBACK    WndProc(HWND, UINT, WPARAM, LPARAM);
-INT_PTR CALLBACK    About(HWND, UINT, WPARAM, LPARAM);
-
-int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
-                     _In_opt_ HINSTANCE hPrevInstance,
-                     _In_ LPWSTR    lpCmdLine,
-                     _In_ int       nCmdShow)
+int 	WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
+	LPSTR lpszCmdLine, int nCmdShow)
 {
-    UNREFERENCED_PARAMETER(hPrevInstance);
-    UNREFERENCED_PARAMETER(lpCmdLine);
+	WNDCLASS wc;
+	HWND hwnd;
+	MSG msg;
+	/***************** 1. Define Windows class ****************************/
+	wc.style = 0; // Class style
+	wc.lpfnWndProc = (WNDPROC)WndProc; // Window procedure address
+	wc.cbClsExtra = 0; // Class extra bytes
+	wc.cbWndExtra = 0; // Window extra bytes
+	wc.hInstance = hInstance; // Instance handle
+	wc.hIcon = LoadIcon(NULL, IDI_WINLOGO); // Icon handle
+	wc.hCursor = LoadCursor(NULL, IDC_ARROW); // Cursor handle
+	wc.hbrBackground = (HBRUSH)(COLOR_WINDOW + 1); // Background color
+	wc.lpszMenuName = NULL; // Menu name
+	wc.lpszClassName = "MyWndClass"; // WNDCLASS name
 
-    // TODO: Place code here.
+	/***************** 2. Register the Windows class **********************/
 
-    // Initialize global strings
-    LoadStringW(hInstance, IDS_APP_TITLE, szTitle, MAX_LOADSTRING);
-    LoadStringW(hInstance, IDC_WIN32LAB1, szWindowClass, MAX_LOADSTRING);
-    MyRegisterClass(hInstance);
+	RegisterClass(&wc);
 
-    // Perform application initialization:
-    if (!InitInstance (hInstance, nCmdShow))
-    {
-        return FALSE;
-    }
+	/***************** 3. Create window **********************/
+	hwnd = CreateWindow(
+		"MyWndClass", // WNDCLASS name
+		"SDK Application", // Window title
+		WS_OVERLAPPEDWINDOW, // Window style
+		CW_USEDEFAULT, // Horizontal position
+		CW_USEDEFAULT, // Vertical position
+		CW_USEDEFAULT, // Initial width
+		CW_USEDEFAULT, // Initial height
+		HWND_DESKTOP, // Handle of parent window
+		NULL, // Menu handle
+		hInstance, // Application's instance handle
+		NULL // Window-creation data
+	);
 
-    HACCEL hAccelTable = LoadAccelerators(hInstance, MAKEINTRESOURCE(IDC_WIN32LAB1));
+	/***************** 4. Display the window **********************/
+	ShowWindow(hwnd, nCmdShow);
+	UpdateWindow(hwnd);
 
-    MSG msg;
-
-    // Main message loop:
-    while (GetMessage(&msg, nullptr, 0, 0))
-    {
-        if (!TranslateAccelerator(msg.hwnd, hAccelTable, &msg))
-        {
-            TranslateMessage(&msg);
-            DispatchMessage(&msg);
-        }
-    }
-
-    return (int) msg.wParam;
+	/***************** 5. Message loop **********************/
+	while (GetMessage(&msg, NULL, 0, 0)) {
+		TranslateMessage(&msg);
+		DispatchMessage(&msg);
+	}
+	return msg.wParam;
 }
-
-
-
-//
-//  FUNCTION: MyRegisterClass()
-//
-//  PURPOSE: Registers the window class.
-//
-ATOM MyRegisterClass(HINSTANCE hInstance)
+LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam,
+	LPARAM lParam)
 {
-    WNDCLASSEXW wcex;
+	PAINTSTRUCT ps;
+	HDC hdc;
 
-    wcex.cbSize = sizeof(WNDCLASSEX);
+	switch (message) {
 
-    wcex.style          = CS_HREDRAW | CS_VREDRAW;
-    wcex.lpfnWndProc    = WndProc;
-    wcex.cbClsExtra     = 0;
-    wcex.cbWndExtra     = 0;
-    wcex.hInstance      = hInstance;
-    wcex.hIcon          = LoadIcon(hInstance, MAKEINTRESOURCE(IDI_WIN32LAB1));
-    wcex.hCursor        = LoadCursor(nullptr, IDC_ARROW);
-    wcex.hbrBackground  = (HBRUSH)(COLOR_WINDOW+1);
-    wcex.lpszMenuName   = MAKEINTRESOURCEW(IDC_WIN32LAB1);
-    wcex.lpszClassName  = szWindowClass;
-    wcex.hIconSm        = LoadIcon(wcex.hInstance, MAKEINTRESOURCE(IDI_SMALL));
+	case WM_PAINT:
+		hdc = BeginPaint(hwnd, &ps);
+		Ellipse(hdc, 10, 10, 200, 100);
+		EndPaint(hwnd, &ps);
+		return 0;
 
-    return RegisterClassExW(&wcex);
-}
-
-//
-//   FUNCTION: InitInstance(HINSTANCE, int)
-//
-//   PURPOSE: Saves instance handle and creates main window
-//
-//   COMMENTS:
-//
-//        In this function, we save the instance handle in a global variable and
-//        create and display the main program window.
-//
-BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
-{
-   hInst = hInstance; // Store instance handle in our global variable
-
-   HWND hWnd = CreateWindowW(szWindowClass, szTitle, WS_OVERLAPPEDWINDOW,
-      CW_USEDEFAULT, 0, CW_USEDEFAULT, 0, nullptr, nullptr, hInstance, nullptr);
-
-   if (!hWnd)
-   {
-      return FALSE;
-   }
-
-   ShowWindow(hWnd, nCmdShow);
-   UpdateWindow(hWnd);
-
-   return TRUE;
-}
-
-//
-//  FUNCTION: WndProc(HWND, UINT, WPARAM, LPARAM)
-//
-//  PURPOSE: Processes messages for the main window.
-//
-//  WM_COMMAND  - process the application menu
-//  WM_PAINT    - Paint the main window
-//  WM_DESTROY  - post a quit message and return
-//
-//
-LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
-{
-    switch (message)
-    {
-    case WM_COMMAND:
-        {
-            int wmId = LOWORD(wParam);
-            // Parse the menu selections:
-            switch (wmId)
-            {
-            case IDM_ABOUT:
-                DialogBox(hInst, MAKEINTRESOURCE(IDD_ABOUTBOX), hWnd, About);
-                break;
-            case IDM_EXIT:
-                DestroyWindow(hWnd);
-                break;
-            default:
-                return DefWindowProc(hWnd, message, wParam, lParam);
-            }
-        }
-        break;
-    case WM_PAINT:
-        {
-            PAINTSTRUCT ps;
-            HDC hdc = BeginPaint(hWnd, &ps);
-            // TODO: Add any drawing code that uses hdc here...
-            EndPaint(hWnd, &ps);
-        }
-        break;
-    case WM_DESTROY:
-        PostQuitMessage(0);
-        break;
-    default:
-        return DefWindowProc(hWnd, message, wParam, lParam);
-    }
-    return 0;
-}
-
-// Message handler for about box.
-INT_PTR CALLBACK About(HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam)
-{
-    UNREFERENCED_PARAMETER(lParam);
-    switch (message)
-    {
-    case WM_INITDIALOG:
-        return (INT_PTR)TRUE;
-
-    case WM_COMMAND:
-        if (LOWORD(wParam) == IDOK || LOWORD(wParam) == IDCANCEL)
-        {
-            EndDialog(hDlg, LOWORD(wParam));
-            return (INT_PTR)TRUE;
-        }
-        break;
-    }
-    return (INT_PTR)FALSE;
+	case WM_DESTROY:
+		PostQuitMessage(0);
+		return 0;
+	}
+	return DefWindowProc(hwnd, message, wParam, lParam);
 }
