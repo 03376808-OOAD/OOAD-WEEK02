@@ -1,5 +1,5 @@
 #include <windows.h>
-
+TCHAR text[] = { "Defenestration" };
 LONG WINAPI WndProc(HWND, UINT, WPARAM, LPARAM);
 
 int 	WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
@@ -64,6 +64,33 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam,
 		Ellipse(hdc, 10, 10, 200, 100);
 		EndPaint(hwnd, &ps);
 		return 0;
+	case WM_LBUTTONDOWN:
+		char str[256];
+		POINT pt;   // point of mouse clicked, received via message
+		pt.x = LOWORD(lParam);
+		pt.y = HIWORD(lParam);
+		wsprintf(str, "WM_LBUTTONDOWN\nCo-ordinate are\n (%i, %i)", pt.x,
+			pt.y);
+		MessageBox(hwnd, str, "Left Button Clicked", MB_OK);
+		return 0;
+
+	case WM_RBUTTONDOWN:
+		pt.x = LOWORD(lParam);
+		pt.y = HIWORD(lParam);
+		wsprintf(str, "WM_RBUTTONDOWN\nCo-ordinate are\n (%i, %i)", pt.x,
+			pt.y);
+		MessageBox(hwnd, str, "Right Button Clicked", MB_OK);
+		return 0;
+
+	case WM_CHAR:
+		
+		hdc = GetDC(hwnd);
+		TextOut(hdc, 1, 1, "  ", 3);
+		wsprintf(str, "%c", (char)wParam);
+		TextOut(hdc, 1, 120, str, strlen(str));
+		ReleaseDC(hwnd, hdc);
+		return 0;
+
 	case WM_DESTROY:
 		PostQuitMessage(0);
 		return 0;
