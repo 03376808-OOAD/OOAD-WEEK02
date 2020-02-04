@@ -49,10 +49,10 @@ int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrev, LPSTR lpCmdLine, int nCmdSh
 # คำถาม
 
 1. โปรแกรมสามารถทำงานได้หรือไม่ 
+    	ไม่ได้
 2. ถ้าไม่ได้ แก้ไขอย่างไร
-
+	ไปที่ Project --> Property --> Configuration Properties --> General --> Character Set เปลี่ยนเป็น Use Multi-Byte-Character Set
 # การส่งงาน
-
 1. fork repository นี้ แล้วสร้าง folder ขึ้นในโฟลเดอร์ย่อยที่่ชื่อ ```Lab submits```  
 1.1 ตั้งชื่อตามรหัสนักศึกษา ไม่ต้องใส่ชื่อ  
 1.2 copy โฟลเดอร์ ใบงานลงใน folder ย่อยที่สร้างขึ้น (ระวัง อย่า move ให้ copy เท่านั้น)  
