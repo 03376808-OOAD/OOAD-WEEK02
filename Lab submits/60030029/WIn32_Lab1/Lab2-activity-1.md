@@ -1,4 +1,4 @@
-﻿# การทดลองที่ 2 
+# การทดลองที่ 2 
 ## Activity 1 การเขียนโปรแกรมด้วย Win32 API
 
 
@@ -49,7 +49,6 @@ int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrev, LPSTR lpCmdLine, int nCmdSh
 # คำถาม
 
 1. โปรแกรมสามารถทำงานได้หรือไม่ 
-เทสๆ
 2. ถ้าไม่ได้ แก้ไขอย่างไร
 
 # การส่งงาน
