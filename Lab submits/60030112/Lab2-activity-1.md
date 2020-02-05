@@ -61,3 +61,4 @@ int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrev, LPSTR lpCmdLine, int nCmdSh
 
 ## ข้อควรระวัง 
 1. การทำ pull request โดยมีไฟล์อยู่นอก folder งานของตนเอง จะทำความเสียหายต่อ repository และอาจทำให้เกิด conflict จนนักศึกษาคนอื่นไม่สามารถส่งงานได้
+.
