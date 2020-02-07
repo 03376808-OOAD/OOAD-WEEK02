@@ -20,9 +20,9 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{0B6F7314-A3BA-4BDE-A43D-962E3C23BBB5}</ProjectGuid>
+    <ProjectGuid>{AA8BA10E-094C-4647-8219-513B5F85AED3}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>activity2</RootNamespace>
+    <RootNamespace>activity3</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -84,7 +84,8 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
@@ -150,19 +151,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="activity2.h" />
+    <ClInclude Include="activity3.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="activity2.cpp" />
+    <ClCompile Include="activity3.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="activity2.rc" />
+    <ResourceCompile Include="activity3.rc" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="activity2.ico" />
+    <Image Include="activity3.ico" />
     <Image Include="small.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
