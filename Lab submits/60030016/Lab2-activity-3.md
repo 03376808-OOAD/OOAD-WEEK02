@@ -67,15 +67,15 @@
 1. ผลการทำงานของโปรแกรมเป็นอย่างไร ให้ cature หน้าจอพร้อมอธิบายการทำงาน
 LBUTTONDOWN ไว้สำหรับการคลิ๊กเมาส์ข้างซ้ายเพื่อให้แสดงผล WM_LBUTTONDOWN Co-ordinate are(ตำแหน่งที่คลิ๊กเมาส์ข้างซ้าย)
 
-![LBUTTONDOWN](Lab submits/60030016/Lab2-activity-3/imgs/1.jpg)
+https://github.com/03376808-OOAD-2562/OOAD-WEEK02/blob/master/Lab%20submits/60030016/Lab2-activity-3/imgs/1.PNG
 
 RBUTTONDOWN ไว้สำหรับการคลิ๊กเมาส์ข้างขวาเพื่อให้แสดงผล WM_RBUTTONDOWN Co-ordinate are(ตำแหน่งที่คลิ๊กเมาส์ข้างขวา)
 
-![RBUTTONDOWN](Lab submits/60030016/Lab2-activity-3/imgs/2.jpg)
+https://github.com/03376808-OOAD-2562/OOAD-WEEK02/blob/master/Lab%20submits/60030016/Lab2-activity-3/imgs/2.PNG
 
 CHAR เป็นตัวที่กำหนดให้แสดงผลเป็นตัวเลขตำแหน่งเมาส์แสดงผลตอนคลิ๊กเมาส์์
 
-![CHAR](Lab submits/60030016/Lab2-activity-3/imgs/3.jpg)
+https://github.com/03376808-OOAD-2562/OOAD-WEEK02/blob/master/Lab%20submits/60030016/Lab2-activity-3/imgs/3.PNG
 
 2. ส่งงานใน repo ตามแนวทางใน activity 1
 
