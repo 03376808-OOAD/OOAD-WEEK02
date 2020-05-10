@@ -94,7 +94,7 @@
 ## คำถาม
 1. ผลการทำงานของโปรแกรมเป็นอย่างไร ให้ capture หน้าจอพร้อมอธิบายการทำงาน
 
-![Capture.png](Capture.png)
+https://github.com/03376808-OOAD-2562/OOAD-WEEK02/blob/master/Lab%20submits/60030016/Capture.PNG
 
 จาก code จะสร้างหน้าต้าง กำหนดขนาดของวงรี และสีพื้นหลัง
 
