@@ -65,16 +65,12 @@
 ## คำถาม
 
 1. ผลการทำงานของโปรแกรมเป็นอย่างไร ให้ cature หน้าจอพร้อมอธิบายการทำงาน
-![RBUTTONDOWN](imgs/Anslab3pic1.jpg)
-![LEFTBUTTONDOWN](imgs/Anslab3pic2.jpg)
-		จากโค้ดที่ให้พิมพ์เพิ่มเติม กำหนดให้แก้ไขข้อมูลที่ switch message 
-		โดยเพิ่ม paint ไว้สำหรับกำหนดขนากของวงกลมหรือรี
-		LBUTTONDOWN ไว้สำหรับการคลิ๊กเมาส์ข้างซ้ายเพื่อให้แสดงผล WM_LBUTTONDOWN Co-ordinate are(ตำแหน่งที่คลิ๊กเมาส์ข้างซ้าย)
-		RBUTTONDOWN
-		ไว้สำหรับการคลิ๊กเมาส์ข้างขวาเพื่อให้แสดงผล WM_RBUTTONDOWN Co-ordinate are(ตำแหน่งที่คลิ๊กเมาส์ข้างขวา)
-		CHAR
-		เป็นตัวที่กำหนดให้แสดงผลเป็นตัวเลขตำแหน่งเมาส์แสดงผลตอนคลิ๊กเมาส์์
-		DESTROY เป็นตัวที่เป็นคำสั่งให้Quit คือออกจากหน้าต่างนั้นๆ
+LBUTTONDOWN ไว้สำหรับการคลิ๊กเมาส์ข้างซ้ายเพื่อให้แสดงผล WM_LBUTTONDOWN Co-ordinate are(ตำแหน่งที่คลิ๊กเมาส์ข้างซ้าย)
+![LBUTTONDOWN](Lab submits/60030016/Lab2-activity-3/imgs/1.jpg)
+RBUTTONDOWN ไว้สำหรับการคลิ๊กเมาส์ข้างขวาเพื่อให้แสดงผล WM_RBUTTONDOWN Co-ordinate are(ตำแหน่งที่คลิ๊กเมาส์ข้างขวา)
+![RBUTTONDOWN](Lab submits/60030016/Lab2-activity-3/imgs/2.jpg)
+CHAR เป็นตัวที่กำหนดให้แสดงผลเป็นตัวเลขตำแหน่งเมาส์แสดงผลตอนคลิ๊กเมาส์์
+![CHAR](Lab submits/60030016/Lab2-activity-3/imgs/3.jpg)
 2. ส่งงานใน repo ตามแนวทางใน activity 1
 
 ## Challenges
