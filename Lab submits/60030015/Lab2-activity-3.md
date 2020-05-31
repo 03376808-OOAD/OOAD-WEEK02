@@ -70,15 +70,15 @@
 จากโค้ดที่ให้พิมพ์เพิ่มเติม กำหนดให้แก้ไขข้อมูลที่ switch message 
 โดยเพิ่ม paint ไว้สำหรับกำหนดขนากของวงกลมหรือรี
 LBUTTONDOWN ไว้สำหรับการคลิ๊กเมาส์ข้างซ้ายเพื่อให้แสดงผล WM_LBUTTONDOWN Co-ordinate are(ตำแหน่งที่คลิ๊กเมาส์ข้างซ้าย)
-	https://drive.google.com/file/d/11Ay03d_sFNOzsRFzpBtwfqdJWcxsbz3E/view?usp=sharing
+	https://drive.google.com/file/d/1cHypXj-xkMcYWzgVifLOqHHlP4rr5dhR/view?usp=sharing
 
 RBUTTONDOWN
 ไว้สำหรับการคลิ๊กเมาส์ข้างขวาเพื่อให้แสดงผล WM_RBUTTONDOWN Co-ordinate are(ตำแหน่งที่คลิ๊กเมาส์ข้างขวา)
-	ttps://drive.google.com/file/d/1nDbG6qC-3BqxJWluiFXFPPvKpS8dxjBZ/view?usp=sharing
+	https://drive.google.com/file/d/148N79j48R6ls2e-sVN_-DqxdaYinzKRH/view?usp=sharing
 
 CHAR
 เป็นตัวที่กำหนดให้แสดงผลเป็นตัวเลขตำแหน่งเมาส์แสดงผลตอนคลิ๊กเมาส
-	https://drive.google.com/file/d/1MkYKNfgq_dVgR4pMYNPse9di8Y4cz3b_/view?usp=sharing์์
+	https://drive.google.com/file/d/10YX03UXOX7MIA2eeAtBxzKspfoxVKIhj/view?usp=sharing
 
 2. ส่งงานใน repo ตามแนวทางใน activity 1
 
