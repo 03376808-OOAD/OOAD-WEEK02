@@ -93,6 +93,11 @@
 
 ## คำถาม
 1. ผลการทำงานของโปรแกรมเป็นอย่างไร ให้ capture หน้าจอพร้อมอธิบายการทำงาน
+    ตอบ https://drive.google.com/file/d/1jvLWeonU7wcIL1EDfZGdi_Wf4hkimu5b/view?usp=sharing
+
+    code จะสร้างหน้าต้าง กำหนดขนาดของวงรี และสีพื้นหลัง
+
 2. ส่งงานใน repo ตามแนวทางใน activity 1
+
 
 
